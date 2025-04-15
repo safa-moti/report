@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="sv">
+	<head>
+		<meta charset="UTF-8">
+		<title>
+			{% block title %}🌈 Welcome to the Crazy Symfony Site! 🌟
+			{% endblock %}
+		</title>
+
+		<link rel="icon" href="{{ asset('img/glider.svg') }}">
+
+		{% block stylesheets %}
+			{{ encore_entry_link_tags('app') }}
+		{% endblock %}
+
+		{% block javascripts %}
+			{{ encore_entry_script_tags('app') }}
+			{% block importmap %}
+				{{ importmap('app') }}
+			{% endblock %}
+		{% endblock %}
+	</head>
+	<body>
+
+		<header class="site-header" style="background-image: url({{ asset('img/background.jpg') }}); background-size: cover; padding: 20px; text-align: center;">
+			<h1 class="site-title" style="font-size: 3rem; color: #fff; text-shadow: 3px 3px 0 #000;">🎉 My Symfony Playground 🎨</h1>
+		</header>
+
+		<nav style="background: linear-gradient(45deg, #ff00cc, #3333ff); padding: 15px;">
+			<ul style="display: flex; gap: 15px; list-style: none; justify-content: center; font-size: 1.2rem;">
+				<li>
+					<a href="{{ path('home') }}" style="color: yellow;">🏠 Home</a>
+				</li>
+				<li>
+					<a href="{{ path('about') }}" style="color: lime;">📘 About</a>
+				</li>
+				<li>
+					<a href="{{ path('me') }}" style="color: cyan;">🧑‍💻 Me</a>
+				</li>
+				<li>
+					<a href="{{ path('report') }}" style="color: orange;">📝 Report</a>
+				</li>
+				<li>
+					<a href="/api/quote" style="color: lightcoral;">📡 API Quote</a>
+				</li>
+
+				<li>
+					<a href="{{ path('lucky_number') }}" style="color: pink;">🎲 Lucky</a>
+				</li>
+			</ul>
+		</nav>
+
+		<main style="padding: 2rem; background: rgba(255, 255, 255, 0.7); margin: 1rem; border-radius: 1rem;"> {% block body %}{% endblock %}
+			</main>
+
+			<footer style="text-align: center; margin-top: 2rem; color: #fff; background-color: #222; padding: 1rem;">
+				💥 Built with ❤️ in Symfony -
+				{{ "now"|date("Y") }}
+			</footer>
+
+		</body>
+	</html>

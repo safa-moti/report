@@ -1,0 +1,23 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Om mig
+{% endblock %}
+
+{% block body %}
+	<h1>Välkommen!</h1>
+	<div style="display: flex; flex-direction: row; gap: 2rem; align-items: flex-start;">
+		<div style="flex: 2;">
+			<p>Hej! 👋</p>
+			Jag är en student i mitt första år på programmet Webbprogrammering vid Blekinge Tekniska Högskola.
+												Jag lär mig för närvarande att bygga moderna webbapplikationer med hjälp av HTML, CSS, JavaScript, PHP och Python,
+									             tillsammans med ramverk som Symfony.
+									            Denna webbplats är en del av kursen.
+												Design och konstruktion av webbapplikationer med MVC
+												Jag är nyfiken, kreativ och gillar att lösa problem genom programmering!</p>
+	</div>
+	<div style="flex: 1;">
+		<a href="{{ asset('img/smile.jpg') }}">
+			<img src="{{ asset('img/smile.jpg') }}" alt="">
+		</a>
+	</div>
+</div>{% endblock %}

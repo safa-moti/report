@@ -1,0 +1,27 @@
+{% extends "base.html.twig" %}
+
+{% block title %}About
+{% endblock %}
+
+{% block body %}
+	<h1>About the Course</h1>
+	<p>This course teaches how to build websites using Symfony.</p>
+
+	<div class="two-columns">
+		<div>
+			<h2>Course GitHub Repo</h2>
+			<p>Check out the course repo here:</p>
+			<a href="https://github.com/dbwebb-se/mvc">👉 dbwebb-se/mvc</a>
+		</div>
+		<div>
+			<h2>My GitHub</h2>
+			<p>Check out my personal GitHub:</p>
+			<a href="https://github.com/safa-moti">👉 safa-moti</a>
+		</div>
+	</div>
+
+	<p style="margin-top: 2rem;">A representative image:</p>
+	<a href="{{ asset('img/glider.svg') }}">
+		<img src="{{ asset('img/glider.svg') }}" alt="Glider icon" style="max-width: 300px; border-radius: 12px;">
+	</a>
+{% endblock %}
