@@ -17,7 +17,7 @@ Projektet är byggt med Symfony och innehåller flera routes, redovisningstexter
 Följ instruktionerna för att klona projektet och köra det lokalt:
 
 ```bash
-git remote add origin git@github.com:safa-moti/report.git
+git clone git@github.com:safa-moti/report.git
 cd report
 composer install
 symfony server:start
