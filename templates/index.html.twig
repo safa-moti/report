@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	API Overview
+{% endblock %}
+
+{% block body %}
+	<h2>📘 JSON API Översikt</h2>
+
+	<div class="two-columns">
+		{% for route in routes %}
+			<div>
+				<h3>
+					<a href="{{ route.path }}">{{ route.path }}</a>
+				</h3>
+				<p>{{ route.description }}</p>
+			</div>
+		{% endfor %}
+	</div>
+{% endblock %}
