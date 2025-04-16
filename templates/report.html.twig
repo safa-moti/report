@@ -1,0 +1,61 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Report
+{% endblock %}
+
+{% block body %}
+	<h1>Redovisning</h1>
+
+
+	<section id="kmom01">
+		<h2>Kmom01</h2>
+		<p>
+			I det här kursmomentet har jag påbörjat arbetet med att bygga en webbplats med hjälp av ramverket Symfony.
+												Jag installerade Symfony-projektet i katalogen me/report, där public/ fungerar som den publika webbroten.
+												Jag skapade flera routes med tillhörande controllers och templates med Twig som templatemotor.
+												Första sidan / innehåller en presentation om mig själv som student på programmet Webbprogrammering.
+												Jag valde att lägga till en bild och en kort introduktion om mina intressen och varför jag valt denna utbildning.
+												Sidan /about beskriver kursen och dess syfte, och innehåller länkar både till kursens Git-repo och till mitt eget GitHub-repo.
+												Jag använde CSS för att skapa två kolumner med information och bilder.
+												Jag skapade även /report som samlar mina redovisningstexter.
+												För att kunna länka direkt till ett visst kursmoment, exempelvis /report#kmom01, använde jag HTML-anchor i sidan.
+												Sidan /lucky visar ett dynamiskt värde varje gång sidan laddas om – ett slumptal mellan 0 och 100.
+												Slutligen skapade jag ett JSON API på routen /api/quote som returnerar ett citat i JSON-format,
+												tillsammans med datum och en tidsstämpel. Citaten väljs slumpmässigt från en fördefinierad lista.
+												Det har varit en lärorik start där jag fått bättre förståelse för hur Symfony fungerar,
+												hur man definierar routes, skapar templates med Twig och arbetar med controllers.
+												Jag ser fram emot att bygga vidare och lära mig mer om MVC-strukturen och komponentbaserad utveckling i Symfony.
+		</p>
+	</section>
+
+
+	<section id="kmom02">
+		<h2>Kmom02</h2>
+		<p>Text för Kmom02 kommer här.</p>
+	</section>
+
+	<section id="kmom03">
+		<h2>Kmom03</h2>
+		<p>Text för Kmom03 kommer här.</p>
+	</section>
+
+	<section id="kmom04">
+		<h2>Kmom04</h2>
+		<p>Text för Kmom04 kommer här.</p>
+	</section>
+
+	<section id="kmom05">
+		<h2>Kmom05</h2>
+		<p>Text för Kmom05 kommer här.</p>
+	</section>
+
+	<section id="kmom06">
+		<h2>Kmom06</h2>
+		<p>Text för Kmom06 kommer här.</p>
+	</section>
+
+	<section id="kmom10">
+		<h2>Kmom10</h2>
+		<p>Text för Kmom10 kommer här.</p>
+	</section>
+{% endblock %}

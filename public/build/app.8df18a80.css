@@ -1,0 +1,1 @@
+.two-columns{display:flex;flex-wrap:wrap;gap:2rem;margin:2rem 0}.two-columns>div{background-color:hsla(0,0%,100%,.8);border:3px dashed #ff69b4;border-radius:15px;box-shadow:5px 5px 15px rgba(0,0,0,.3);flex:1;min-width:300px;padding:1.5rem;transition:transform .3s ease}.two-columns>div:hover{transform:scale(1.03)}

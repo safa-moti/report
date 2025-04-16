@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}API Overview
+{% endblock %}
+
+{% block body %}
+	<h1>API Overview</h1>
+	<p>Här är de tillgängliga API-routes på denna webbplats:</p>
+
+	<ul>
+		<li>
+			<a href="{{ path('api_quote') }}">/api/quote</a>: Returnerar ett slumpmässigt citat med dagens datum och tidsstämpel.
+		</li>
+	</ul>
+{% endblock %}
