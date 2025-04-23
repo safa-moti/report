@@ -23,3 +23,7 @@
 /public/assets/
 /assets/vendor/
 ###< symfony/asset-mapper ###
+
+/tools/**/vendor/
+/tools/**/composer.lock
+.php-cs-fixer.cache

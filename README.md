@@ -4,7 +4,7 @@
 
 ### Me-sida för MVC-kursen
 
-![Header-bild](assets/img/background.jpg)
+![Header-bild](assets/images/background.jpg)
 
 ### Om Projektet
 
