@@ -12,7 +12,7 @@ Projektet är byggt med Symfony och innehåller flera routes, redovisningstexter
 
 **Länk till GitHub:** [Projekt GitHub](https://github.com/safa-moti/report)
 
-## Kom Igång
+Kom Igång
 
 Följ instruktionerna för att klona projektet och köra det lokalt:
 
