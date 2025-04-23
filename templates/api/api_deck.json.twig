@@ -1,0 +1,9 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Kortlek JSON{% endblock %}
+
+{% block body %}
+    <h1>JSON representation av kortleken</h1>
+
+    <pre>{{ deck | json_encode(constant('JSON_PRETTY_PRINT')) }}</pre>
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Kortspel - Hem{% endblock %}
+
+{% block body %}
+    <h1>Välkommen till Kortspel</h1>
+    
+    <p>Här kan du leka med en kortlek. Välj en av de följande alternativen:</p>
+
+    <ul>
+        <li><a href="{{ path('card_deck') }}">Visa kortleken</a></li>
+        <li><a href="{{ path('card_deck_shuffle') }}">Blanda kortleken</a></li>
+        <li><a href="{{ path('card_deck_draw') }}">Dra ett kort</a></li>
+        <li><a href="{{ path('card_deck_delete') }}">Rensa sessionen (kortleken)</a></li>
+    </ul>
+
+    <h2>Struktur på klasserna</h2>
+    <p>Här är strukturen för klasserna i vårt kortspel:</p>
+    
+    <p><strong>Card</strong> representerar ett kort i kortleken.</p>
+    <p><strong>DeckOfCards</strong> representerar hela kortleken och hanterar dragning och blandning av kort.</p>
+    <p><strong>CardHand</strong> representerar en hand med kort.</p>
+
+    <h3>UML-diagram</h3>
+    <p>För att visualisera vår design kan vi använda ett UML-diagram:</p>
+    <img src="{{ asset('images/uml_diagram.png') }}" alt="UML-diagram för kortspel" />
+{% endblock %}

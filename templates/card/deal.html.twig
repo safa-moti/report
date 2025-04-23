@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Dealt Cards{% endblock %}
+
+{% block body %}
+    <h1>Dealt Cards</h1>
+    
+    <p>Remaining cards in deck: {{ remaining }}</p>
+
+    <h2>Players' Hands</h2>
+    
+    {% for playerIndex, playerHand in dealtCards %}
+        <h3>Player {{ playerIndex + 1 }}</h3>
+        <ul>
+            {% for card in playerHand %}
+                <li>{{ card }}</li>
+            {% endfor %}
+        </ul>
+    {% endfor %}
+
+    <a href="{{ path('card_home') }}" style="color: lightblue;">Back to Home</a>
+{% endblock %}

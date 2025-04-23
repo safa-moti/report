@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}API-översikt{% endblock %}
+
+{% block body %}
+    <h1>API-översikt</h1>
+    
+    <p>Här är alla tillgängliga API-rutter:</p>
+    
+    <ul>
+        <li><a href="{{ path('api_deck') }}">GET /api/deck - Visa kortleken i JSON-format</a></li>
+        <li><a href="{{ path('api_deck_shuffle') }}">POST /api/deck/shuffle - Blanda kortleken i JSON-format</a></li>
+        <li><a href="{{ path('api_deck_draw') }}">POST /api/deck/draw - Dra ett kort från kortleken i JSON-format</a></li>
+        <li><a href="{{ path('api_deck_draw_number', {number: 5}) }}">POST /api/deck/draw/{number} - Dra flera kort från kortleken</a></li>
+    </ul>
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Dra ett kort{% endblock %}
+
+{% block body %}
+    <h1>Drog ett kort</h1>
+
+    <p>Du drog kortet: <strong>{{ card }}</strong></p>
+    <p>Det finns {{ remaining }} kort kvar i kortleken.</p>
+
+    <a href="{{ path('card_deck_draw') }}">Dra ett till kort</a>
+    <a href="{{ path('card_deck') }}">Visa alla kort</a>
+{% endblock %}

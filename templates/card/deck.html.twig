@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Kortlek{% endblock %}
+
+{% block body %}
+    <h1>Alla kort i kortleken</h1>
+
+    <p>Här är alla korten i kortleken, sorterade efter färg och värde:</p>
+    
+    <ul>
+        {% for card in cards %}
+            <li>{{ card }}</li>
+        {% endfor %}
+    </ul>
+
+    <a href="{{ path('card_deck_shuffle') }}">Blanda kortleken</a>
+{% endblock %}
