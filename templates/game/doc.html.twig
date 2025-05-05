@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Game Documentation
+{% endblock %}
+
+{% block body %}
+	<h1>Game Documentation</h1>
+	<p>Here is the documentation for how to play the game.</p>
+	<ul>
+		<li>
+			<strong>Objective:</strong>
+			The goal of the game is to score higher than the dealer without exceeding 21 points.</li>
+		<li>
+			<strong>Gameplay:</strong>
+			Players and the dealer are each dealt two cards. The player can draw more cards, and the dealer will play after the player.</li>
+		<li>
+			<strong>Card Values:</strong>
+			Cards 2-10 are worth their face value. Face cards (J, Q, K) are worth 10. Aces are worth 1 or 11, depending on what is more favorable for the hand.</li>
+	</ul>
+	<a href="{{ path('game_home') }}">Back to Home</a>
+{% endblock %}

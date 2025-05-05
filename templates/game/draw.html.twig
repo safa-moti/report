@@ -1,0 +1,18 @@
+{# templates/game/draw.html.twig (Optional) #}
+{% extends 'base.html.twig' %}
+
+{% block title %}Card Drawn{% endblock %}
+
+{% block body %}
+    <h1>Card Drawn!</h1>
+    <p>You have drawn a card. Your new hand is:</p>
+    <ul>
+        {% for card in player_hand %}
+            <li>{{ card }}</li>
+        {% endfor %}
+    </ul>
+    <p><strong>Your Score:</strong> {{ player_score }}</p>
+    <p>
+        <a href="{{ path('game_play') }}">Back to Game</a>
+    </p>
+{% endblock %}

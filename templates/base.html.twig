@@ -70,8 +70,23 @@
 				<li>
 					 <a href="{{ path('card_deck_deal', { 'players': 2, 'cards': 5 }) }}" style="color: lightblue;">Deal Cards</a>
 				</li>
-				
 
+				<!-- Added Game-related Routes -->
+				<li>
+					 <a href="{{ path('game_home') }}" style="color: lightcoral;">🎮 Game Home</a>
+				</li>
+				<li>
+					 <a href="{{ path('game_doc') }}" style="color: lightgreen;">📜 Game Docs</a>
+				</li>
+				<li>
+					 <a href="{{ path('game_play') }}" style="color: yellowgreen;">🎲 Play Game</a>
+				</li>
+				<li>
+					 <a href="{{ path('game_draw') }}" style="color: orange;">🃏 Draw Card</a>
+				</li>
+				<li>
+					 <a href="{{ path('game_dealer_turn') }}" style="color: dodgerblue;">🃏 Dealer Turn</a>
+				</li>
 			</ul>
 		</nav>
 

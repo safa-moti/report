@@ -1,0 +1,14 @@
+{# templates/game/dealer_turn.html.twig (Optional) #}
+{% extends 'base.html.twig' %}
+
+{% block title %}Dealer's Turn{% endblock %}
+
+{% block body %}
+    <h1>Dealer's Turn</h1>
+    <p>The dealer is playing their turn...</p>
+    <p><strong>Dealer's Score:</strong> {{ dealer_score }}</p>
+
+    <p>
+        <a href="{{ path('game_play') }}">Back to Game</a>
+    </p>
+{% endblock %}

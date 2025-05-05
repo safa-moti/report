@@ -1,0 +1,12 @@
+{# templates/game/index.html.twig #}
+{% extends 'base.html.twig' %}
+
+{% block title %}Game Home{% endblock %}
+
+{% block body %}
+    <h1>Welcome to the Game!</h1>
+    <p>Click below to start playing or view documentation.</p>
+    <a href="{{ path('game_play') }}">Start Game</a>
+    <br>
+    <a href="{{ path('game_doc') }}">View Game Documentation</a>
+{% endblock %}
