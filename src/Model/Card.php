@@ -29,7 +29,7 @@ class Card
             return 10;
         }
         if ($this->rank == 'A') {
-            return 11;  // Ace is worth 11 by default, can be adjusted later
+            return 11;
         }
         return (int)$this->rank;
     }
