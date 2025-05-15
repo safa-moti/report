@@ -21,7 +21,7 @@ class DeckOfCards
             }
         }
 
-        // Optional: implement joker logic if needed in future
+
         if ($includeJokers) {
             $this->deck[] = new Card('', '🃏');
             $this->deck[] = new Card('', '🃏');
