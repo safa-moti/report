@@ -5,17 +5,61 @@
 
 {% block body %}
 	<h1>Game Documentation</h1>
-	<p>Here is the documentation for how to play the game.</p>
+	<p>Here is the documentation for how to play the game and how the game logic is structured.</p>
+
+
+	<h2>Flowchart</h2>
+	<p>Below is the flowchart that represents the basic flow of the game, from dealing the cards to determining the winner:</p>
+	<img src="{{ asset('images/flowchart.png') }}" alt="Flowchart" style="max-width: 30%; height: auto;">
+
+
+	<h2>Pseudocode for Player's Turn</h2>
+	<pre>
+Player's Turn:
+    1. Deal initial cards to player and dealer
+    2. Display player's hand and score
+    3. While player's score is less than 21:
+        a. Ask player to draw a card or stop
+        b. If draw:
+            i. Add a card to player's hand
+            ii. Update player's score
+            iii. Display new hand and score
+        c. Else if stop:
+            i. End player's turn
+    </pre>
+
+	<h2>Pseudocode for Dealer's Turn</h2>
+	<pre>
+Dealer's Turn:
+    1. Deal initial cards to player and dealer
+    2. While dealer's score is less than 17:
+        a. Draw a card for dealer
+        b. Update dealer's score
+    3. End dealer's turn
+    </pre>
+
+
+	<h2>Class Descriptions</h2>
+	<p>The following classes are used to represent different parts of the game:</p>
 	<ul>
 		<li>
-			<strong>Objective:</strong>
-			The goal of the game is to score higher than the dealer without exceeding 21 points.</li>
+			<strong>Card:</strong>
+			Represents a single card with a rank (e.g. 2-10, J, Q, K, A) and a suit (e.g. ♠', '♥', '♦', '♣'). Handles card values and string representation.</li>
 		<li>
-			<strong>Gameplay:</strong>
-			Players and the dealer are each dealt two cards. The player can draw more cards, and the dealer will play after the player.</li>
+			<strong>Deck:</strong>
+			(Not explicitly shown, but implied) Would represent a deck of cards, shuffling and dealing cards to players and dealer.</li>
 		<li>
-			<strong>Card Values:</strong>
-			Cards 2-10 are worth their face value. Face cards (J, Q, K) are worth 10. Aces are worth 1 or 11, depending on what is more favorable for the hand.</li>
+			<strong>Game:</strong>
+			Manages the game logic, including the dealer's and player's turns, dealing cards, calculating scores, and checking for a winner.</li>
+		<li>
+			<strong>GameApiController:</strong>
+			Provides a RESTful API for game status, like player score, dealer score, and remaining cards in the deck.</li>
+		<li>
+			<strong>GameController:</strong>
+			Handles web routes for the game flow. It includes routes for starting the game, drawing cards, and dealer's turn. Also renders the main game interface and documentation.</li>
 	</ul>
-	<a href="{{ path('game_home') }}">Back to Home</a>
+
+	<p>Back to
+		<a href="{{ path('game_home') }}">Home</a>
+	</p>
 {% endblock %}
