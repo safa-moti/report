@@ -1,0 +1,54 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Alla Böcker
+{% endblock %}
+
+{% block body %}
+	<h1>Alla Böcker</h1>
+
+	<table>
+		<thead>
+			<tr>
+				<th>Titel</th>
+				<th>Författare</th>
+				<th>ISBN</th>
+				<th>Bild</th>
+				<th>Åtgärder</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% if books is empty %}
+				<tr>
+					<td colspan="5">{{ message }}</td>
+
+				</tr>
+			{% else %}
+				{% for book in books %}
+					<tr>
+						<td>{{ book.title }}</td>
+						<td>{{ book.author }}</td>
+						<td>{{ book.isbn }}</td>
+						<td>
+							{% if book.image %}
+								<img src="{{ asset('images/' ~ book.image) }}" alt="{{ book.title }}" width="50"/>
+							{% else %}
+								Ingen bild
+							{% endif %}
+						</td>
+						<td>
+							<a href="{{ path('book_show_by_id', {'id': book.id}) }}">Visa</a>
+							|
+							<a href="{{ path('book_update', {'id': book.id}) }}">Redigera</a>
+							|
+							<form action="{{ path('book_delete_by_id', {'id': book.id}) }}" method="post" style="display:inline;">
+								<button type="submit" onclick="return confirm('Är du säker på att du vill ta bort denna bok?')">Ta bort</button>
+							</form>
+						</td>
+					</tr>
+				{% endfor %}
+			{% endif %}
+		</tbody>
+	</table>
+
+	<a href="{{ path('book_create') }}">Lägg till en ny bok</a>
+{% endblock %}

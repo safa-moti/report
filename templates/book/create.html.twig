@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Skapa en Ny Bok
+{% endblock %}
+
+{% block body %}
+	<h1>Skapa en ny bok</h1>
+
+	<form action="{{ path('book_create') }}" method="POST">
+		<div>
+			<label for="title">Titel:</label>
+			<input type="text" id="title" name="title" required/>
+		</div>
+		<div>
+			<label for="isbn">ISBN:</label>
+			<input type="text" id="isbn" name="isbn" required/>
+		</div>
+		<div>
+			<label for="author">Författare:</label>
+			<input type="text" id="author" name="author" required/>
+		</div>
+		<div>
+			<label for="image">Bild URL:</label>
+			<input type="text" id="image" name="image"/>
+		</div>
+		<div>
+			<button type="submit">Skapa Bok</button>
+		</div>
+	</form>
+
+	<a href="{{ path('book_show_all') }}">Tillbaka till listan</a>
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Återställ Biblioteket
+{% endblock %}
+
+{% block body %}
+	<h1>Återställ Biblioteket</h1>
+	<p>Vill du verkligen återställa databasen till ursprungligt innehåll? Detta kommer att ta bort alla befintliga böcker.</p>
+
+	<form action="{{ path('book_reset') }}" method="POST">
+		<button type="submit" onclick="return confirm('Är du säker på att du vill återställa biblioteket?')">Återställ</button>
+	</form>
+
+	<a href="{{ path('book_home') }}">Tillbaka till startsidan</a>
+{% endblock %}

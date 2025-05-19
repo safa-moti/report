@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ta bort Bok
+{% endblock %}
+
+{% block body %}
+	<h1>Bekräfta borttagning av bok</h1>
+
+	<p>Är du säker på att du vill ta bort boken "{{ book.title }}"?</p>
+
+	<form action="{{ path('book_delete_by_id', {'id': book.id}) }}" method="POST">
+		<button type="submit" onclick="return confirm('Är du säker på att du vill ta bort denna bok?')">Ja, ta bort</button>
+	</form>
+
+	<a href="{{ path('book_show_all') }}">Avbryt</a>
+{% endblock %}

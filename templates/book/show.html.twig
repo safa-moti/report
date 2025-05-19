@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Bok Detaljer
+{% endblock %}
+
+{% block body %}
+	<h1>{{ book.title }}</h1>
+
+	<p>
+		<strong>Författare:</strong>
+		{{ book.author }}</p>
+	<p>
+		<strong>ISBN:</strong>
+		{{ book.isbn }}</p>
+
+	<div>
+		{% if book.image %}
+			<img src="{{ asset('images/' ~ book.image) }}" alt="{{ book.title }}" width="150"/>
+		{% else %}
+			Ingen bild
+		{% endif %}
+	</div>
+
+	<div>
+		<a href="{{ path('book_update', {'id': book.id}) }}">Redigera Bok</a>
+	</div>
+
+	<form action="{{ path('book_delete_by_id', {'id': book.id}) }}" method="POST" style="display:inline;">
+		<button type="submit" onclick="return confirm('Är du säker på att du vill ta bort denna bok?')">Ta bort Bok</button>
+	</form>
+
+	<br>
+	<a href="{{ path('book_show_all') }}">Tillbaka till alla böcker</a>
+{% endblock %}
