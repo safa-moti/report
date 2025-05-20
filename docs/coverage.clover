@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1747583072">
-  <project timestamp="1747583072">
+<coverage generated="1747717876">
+  <project timestamp="1747717876">
     <file name="/Users/safamoti/dbwebb-kurser/mvc/me/report/src/Card/Card.php">
       <class name="App\Card\Card" namespace="global">
         <metrics complexity="4" methods="4" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="5" coveredstatements="0" elements="9" coveredelements="0"/>
@@ -124,41 +124,41 @@
       <line num="117" type="method" name="apiBooks" visibility="public" complexity="1" crap="2" count="0"/>
       <line num="120" type="stmt" count="0"/>
       <line num="121" type="stmt" count="0"/>
-      <line num="125" type="method" name="apiBookByIsbn" visibility="public" complexity="2" crap="6" count="0"/>
+      <line num="124" type="method" name="apiBookByIsbn" visibility="public" complexity="2" crap="6" count="0"/>
+      <line num="127" type="stmt" count="0"/>
       <line num="128" type="stmt" count="0"/>
       <line num="129" type="stmt" count="0"/>
-      <line num="130" type="stmt" count="0"/>
-      <line num="133" type="stmt" count="0"/>
-      <line num="137" type="method" name="resetDatabase" visibility="public" complexity="2" crap="6" count="0"/>
+      <line num="132" type="stmt" count="0"/>
+      <line num="136" type="method" name="resetDatabase" visibility="public" complexity="2" crap="6" count="0"/>
+      <line num="139" type="stmt" count="0"/>
       <line num="140" type="stmt" count="0"/>
-      <line num="141" type="stmt" count="0"/>
+      <line num="142" type="stmt" count="0"/>
       <line num="143" type="stmt" count="0"/>
-      <line num="144" type="stmt" count="0"/>
-      <line num="146" type="stmt" count="0"/>
-      <line num="148" type="stmt" count="0"/>
-      <line num="150" type="stmt" count="0"/>
-      <line num="154" type="method" name="createExampleBooks" visibility="private" complexity="1" crap="2" count="0"/>
-      <line num="156" type="stmt" count="0"/>
+      <line num="145" type="stmt" count="0"/>
+      <line num="147" type="stmt" count="0"/>
+      <line num="149" type="stmt" count="0"/>
+      <line num="153" type="method" name="createExampleBooks" visibility="private" complexity="1" crap="2" count="0"/>
+      <line num="155" type="stmt" count="0"/>
+      <line num="157" type="stmt" count="0"/>
       <line num="158" type="stmt" count="0"/>
       <line num="159" type="stmt" count="0"/>
       <line num="160" type="stmt" count="0"/>
       <line num="161" type="stmt" count="0"/>
-      <line num="162" type="stmt" count="0"/>
+      <line num="163" type="stmt" count="0"/>
       <line num="164" type="stmt" count="0"/>
       <line num="165" type="stmt" count="0"/>
       <line num="166" type="stmt" count="0"/>
       <line num="167" type="stmt" count="0"/>
-      <line num="168" type="stmt" count="0"/>
+      <line num="169" type="stmt" count="0"/>
       <line num="170" type="stmt" count="0"/>
       <line num="171" type="stmt" count="0"/>
       <line num="172" type="stmt" count="0"/>
       <line num="173" type="stmt" count="0"/>
-      <line num="174" type="stmt" count="0"/>
+      <line num="175" type="stmt" count="0"/>
       <line num="176" type="stmt" count="0"/>
       <line num="177" type="stmt" count="0"/>
       <line num="178" type="stmt" count="0"/>
-      <line num="179" type="stmt" count="0"/>
-      <metrics loc="182" ncloc="171" classes="1" methods="10" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="79" coveredstatements="0" elements="89" coveredelements="0"/>
+      <metrics loc="181" ncloc="180" classes="1" methods="10" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="79" coveredstatements="0" elements="89" coveredelements="0"/>
     </file>
     <file name="/Users/safamoti/dbwebb-kurser/mvc/me/report/src/Controller/CardApiController.php">
       <class name="App\Controller\CardApiController" namespace="global">
@@ -571,7 +571,7 @@
       <line num="77" type="method" name="setImage" visibility="public" complexity="1" crap="2" count="0"/>
       <line num="79" type="stmt" count="0"/>
       <line num="80" type="stmt" count="0"/>
-      <metrics loc="83" ncloc="77" classes="1" methods="9" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="13" coveredstatements="0" elements="22" coveredelements="0"/>
+      <metrics loc="83" ncloc="82" classes="1" methods="9" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="13" coveredstatements="0" elements="22" coveredelements="0"/>
     </file>
     <file name="/Users/safamoti/dbwebb-kurser/mvc/me/report/src/Entity/Product.php">
       <class name="App\Entity\Product" namespace="global">
@@ -639,7 +639,7 @@
     </file>
     <file name="/Users/safamoti/dbwebb-kurser/mvc/me/report/src/Model/Game.php">
       <class name="App\Model\Game" namespace="global">
-        <metrics complexity="10" methods="9" coveredmethods="6" conditionals="0" coveredconditionals="0" statements="17" coveredstatements="12" elements="26" coveredelements="18"/>
+        <metrics complexity="10" methods="9" coveredmethods="7" conditionals="0" coveredconditionals="0" statements="17" coveredstatements="15" elements="26" coveredelements="22"/>
       </class>
       <line num="16" type="method" name="dealInitialCards" visibility="public" complexity="1" crap="1" count="3"/>
       <line num="18" type="stmt" count="3"/>
@@ -650,11 +650,11 @@
       <line num="27" type="stmt" count="1"/>
       <line num="28" type="stmt" count="1"/>
       <line num="29" type="stmt" count="1"/>
-      <line num="32" type="method" name="dealerTurn" visibility="public" complexity="2" crap="3.69" count="1"/>
+      <line num="32" type="method" name="dealerTurn" visibility="public" complexity="2" crap="2" count="1"/>
       <line num="34" type="stmt" count="1"/>
-      <line num="35" type="stmt" count="0"/>
-      <line num="36" type="stmt" count="0"/>
-      <line num="37" type="stmt" count="0"/>
+      <line num="35" type="stmt" count="1"/>
+      <line num="36" type="stmt" count="1"/>
+      <line num="37" type="stmt" count="1"/>
       <line num="41" type="method" name="drawCard" visibility="private" complexity="1" crap="1" count="3"/>
       <line num="43" type="stmt" count="3"/>
       <line num="49" type="method" name="calculateScore" visibility="private" complexity="1" crap="1" count="3"/>
@@ -667,7 +667,7 @@
       <line num="72" type="stmt" count="2"/>
       <line num="75" type="method" name="getDealerScore" visibility="public" complexity="1" crap="1" count="2"/>
       <line num="77" type="stmt" count="2"/>
-      <metrics loc="80" ncloc="69" classes="1" methods="9" coveredmethods="6" conditionals="0" coveredconditionals="0" statements="17" coveredstatements="12" elements="26" coveredelements="18"/>
+      <metrics loc="80" ncloc="69" classes="1" methods="9" coveredmethods="7" conditionals="0" coveredconditionals="0" statements="17" coveredstatements="15" elements="26" coveredelements="22"/>
     </file>
     <file name="/Users/safamoti/dbwebb-kurser/mvc/me/report/src/Repository/BookRepository.php">
       <class name="App\Repository\BookRepository" namespace="global">
@@ -699,6 +699,6 @@
       <line num="50" type="stmt" count="0"/>
       <metrics loc="78" ncloc="42" classes="1" methods="3" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="13" coveredstatements="0" elements="16" coveredelements="0"/>
     </file>
-    <metrics files="25" loc="1575" ncloc="1409" classes="24" methods="112" coveredmethods="14" conditionals="0" coveredconditionals="0" statements="436" coveredstatements="30" elements="548" coveredelements="44"/>
+    <metrics files="25" loc="1574" ncloc="1423" classes="24" methods="112" coveredmethods="15" conditionals="0" coveredconditionals="0" statements="436" coveredstatements="33" elements="548" coveredelements="48"/>
   </project>
 </coverage>

@@ -11,8 +11,8 @@
         "ext-iconv": "*",
         "doctrine/dbal": "^3.9.4",
         "doctrine/doctrine-bundle": "^2.14",
-        "doctrine/doctrine-migrations-bundle": "^3.4.1",
-        "doctrine/orm": "^3.3.2",
+        "doctrine/doctrine-migrations-bundle": "^3.4.2",
+        "doctrine/orm": "^3.3.3",
         "phpdocumentor/reflection-docblock": "^5.6.2",
         "phpstan/phpdoc-parser": "^2.1",
         "symfony/asset": "7.2.*",
@@ -21,7 +21,7 @@
         "symfony/doctrine-messenger": "7.2.*",
         "symfony/dotenv": "7.2.*",
         "symfony/expression-language": "7.2.*",
-        "symfony/flex": "^2.5",
+        "symfony/flex": "^2.5.1",
         "symfony/form": "7.2.*",
         "symfony/framework-bundle": "7.2.*",
         "symfony/http-client": "7.2.*",
@@ -36,16 +36,16 @@
         "symfony/runtime": "7.2.*",
         "symfony/security-bundle": "7.2.*",
         "symfony/serializer": "7.2.*",
-        "symfony/stimulus-bundle": "^2.24",
+        "symfony/stimulus-bundle": "^2.25.1",
         "symfony/string": "7.2.*",
         "symfony/translation": "7.2.*",
         "symfony/twig-bundle": "7.2.*",
-        "symfony/ux-turbo": "^2.24",
+        "symfony/ux-turbo": "^2.25.1",
         "symfony/validator": "7.2.*",
         "symfony/web-link": "7.2.*",
         "symfony/yaml": "7.2.*",
-        "twig/extra-bundle": "^2.12|^3.20",
-        "twig/twig": "^2.12|^3.20"
+        "twig/extra-bundle": "^2.12|^3.21",
+        "twig/twig": "^2.12|^3.21.1"
     },
     "config": {
         "allow-plugins": {
@@ -88,33 +88,33 @@
         "phpunit": "XDEBUG_MODE=coverage vendor/bin/phpunit",
         "phpdoc": "tools/phpdoc/phpdoc --config=tools/phpdoc/phpdoc.xml"
     },
-    "auto-scripts": {
-        "cache:clear": "symfony-cmd",
-        "assets:install %PUBLIC_DIR%": "symfony-cmd",
-        "importmap:install": "symfony-cmd"
-    },
-    "post-install-cmd": [
-        "@auto-scripts"
-    ],
-    "post-update-cmd": [
-        "@auto-scripts"
-    ],
-    "conflict": {
-        "symfony/symfony": "*"
-    },
     "extra": {
         "symfony": {
             "allow-contrib": false,
-            "require": "7.2.*"
+            "require": "7.2.*",
+            "auto-scripts": {
+                "cache:clear": "symfony-cmd",
+                "assets:install %PUBLIC_DIR%": "symfony-cmd",
+                "importmap:install": "symfony-cmd"
+            },
+            "post-install-cmd": [
+                "@auto-scripts"
+            ],
+            "post-update-cmd": [
+                "@auto-scripts"
+            ]
         }
     },
+    "conflict": {
+        "symfony/symfony": "*"
+    },
     "require-dev": {
-        "phpunit/phpunit": "^9.6.22",
+        "phpunit/phpunit": "^9.6.23",
         "symfony/browser-kit": "7.2.*",
         "symfony/css-selector": "7.2.*",
         "symfony/debug-bundle": "7.2.*",
         "symfony/maker-bundle": "^1.63",
-        "symfony/phpunit-bridge": "^7.2",
+        "symfony/phpunit-bridge": "^7.2.6",
         "symfony/stopwatch": "7.2.*",
         "symfony/web-profiler-bundle": "7.2.*"
     }
