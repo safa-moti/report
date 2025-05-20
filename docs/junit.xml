@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="" tests="8" assertions="13" errors="0" warnings="0" failures="0" skipped="0" time="0.093615">
+    <testsuite name="Project Test Suite" tests="8" assertions="13" errors="0" warnings="0" failures="0" skipped="0" time="0.093615">
+      <testsuite name="App\Dice\DiceTest" file="/Users/safamoti/dbwebb-kurser/mvc/me/report/tests/Dice/DiceTest.php" tests="1" assertions="2" errors="0" warnings="0" failures="0" skipped="0" time="0.062651">
+        <testcase name="testCreateDice" class="App\Dice\DiceTest" classname="App.Dice.DiceTest" file="/Users/safamoti/dbwebb-kurser/mvc/me/report/tests/Dice/DiceTest.php" line="16" assertions="2" time="0.062651"/>
+      </testsuite>
+      <testsuite name="App\Tests\Model\CardTest" file="/Users/safamoti/dbwebb-kurser/mvc/me/report/tests/Model/CardTest.php" tests="2" assertions="4" errors="0" warnings="0" failures="0" skipped="0" time="0.009082">
+        <testcase name="testCardValue" class="App\Tests\Model\CardTest" classname="App.Tests.Model.CardTest" file="/Users/safamoti/dbwebb-kurser/mvc/me/report/tests/Model/CardTest.php" line="10" assertions="3" time="0.008413"/>
+        <testcase name="testCardStringRepresentation" class="App\Tests\Model\CardTest" classname="App.Tests.Model.CardTest" file="/Users/safamoti/dbwebb-kurser/mvc/me/report/tests/Model/CardTest.php" line="22" assertions="1" time="0.000669"/>
+      </testsuite>
+      <testsuite name="App\Tests\Model\DeckOfCardsTest" file="/Users/safamoti/dbwebb-kurser/mvc/me/report/tests/Model/DeckOfCardsTest.php" tests="2" assertions="2" errors="0" warnings="0" failures="0" skipped="0" time="0.008460">
+        <testcase name="testDeckHas52Cards" class="App\Tests\Model\DeckOfCardsTest" classname="App.Tests.Model.DeckOfCardsTest" file="/Users/safamoti/dbwebb-kurser/mvc/me/report/tests/Model/DeckOfCardsTest.php" line="13" assertions="1" time="0.007330"/>
+        <testcase name="testDrawCard" class="App\Tests\Model\DeckOfCardsTest" classname="App.Tests.Model.DeckOfCardsTest" file="/Users/safamoti/dbwebb-kurser/mvc/me/report/tests/Model/DeckOfCardsTest.php" line="22" assertions="1" time="0.001131"/>
+      </testsuite>
+      <testsuite name="App\Tests\Model\GameTest" file="/Users/safamoti/dbwebb-kurser/mvc/me/report/tests/Model/GameTest.php" tests="3" assertions="5" errors="0" warnings="0" failures="0" skipped="0" time="0.013422">
+        <testcase name="testInitialScores" class="App\Tests\Model\GameTest" classname="App.Tests.Model.GameTest" file="/Users/safamoti/dbwebb-kurser/mvc/me/report/tests/Model/GameTest.php" line="11" assertions="2" time="0.004957"/>
+        <testcase name="testPlayerDrawCard" class="App\Tests\Model\GameTest" classname="App.Tests.Model.GameTest" file="/Users/safamoti/dbwebb-kurser/mvc/me/report/tests/Model/GameTest.php" line="19" assertions="1" time="0.000718"/>
+        <testcase name="testDealerTurn" class="App\Tests\Model\GameTest" classname="App.Tests.Model.GameTest" file="/Users/safamoti/dbwebb-kurser/mvc/me/report/tests/Model/GameTest.php" line="28" assertions="2" time="0.007747"/>
+      </testsuite>
+    </testsuite>
+  </testsuite>
+</testsuites>
