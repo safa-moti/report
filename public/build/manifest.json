@@ -1,7 +1,13 @@
 {
-  "build/app.css": "build/app.8df18a80.css",
+  "build/app.css": "build/app.25a19093.css",
   "build/app.js": "build/app.360a601f.js",
   "build/runtime.js": "build/runtime.971a7ffe.js",
+  "build/images/flowchart.png": "build/images/flowchart.png",
   "build/images/background.jpg": "build/images/background.jpg",
-  "build/images/smile.jpg": "build/images/smile.jpg"
+  "build/images/prideandprjudice.jpg": "build/images/prideandprjudice.jpg",
+  "build/images/1984.jpg": "build/images/1984.jpg",
+  "build/images/mobydick.jpg": "build/images/mobydick.jpg",
+  "build/images/uml_diagram.png": "build/images/uml_diagram.png",
+  "build/images/smile.jpg": "build/images/smile.jpg",
+  "build/images/lucky.jpg": "build/images/lucky.jpg"
 }
