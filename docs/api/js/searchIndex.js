@@ -161,6 +161,21 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/App-Controller-BookController.html#method_createExampleBooks"
         },                {
+            "fqsen": "\\App\\Controller\\BookController\u003A\u003AcreateBookEntity\u0028\u0029",
+            "name": "createBookEntity",
+            "summary": "",
+            "url": "classes/App-Controller-BookController.html#method_createBookEntity"
+        },                {
+            "fqsen": "\\App\\Controller\\BookController\u003A\u003AextractBookData\u0028\u0029",
+            "name": "extractBookData",
+            "summary": "",
+            "url": "classes/App-Controller-BookController.html#method_extractBookData"
+        },                {
+            "fqsen": "\\App\\Controller\\BookController\u003A\u003AvalidateBookData\u0028\u0029",
+            "name": "validateBookData",
+            "summary": "",
+            "url": "classes/App-Controller-BookController.html#method_validateBookData"
+        },                {
             "fqsen": "\\App\\Controller\\CardApiController",
             "name": "CardApiController",
             "summary": "",
@@ -225,6 +240,16 @@ Search.appendIndex(
             "name": "dealCards",
             "summary": "",
             "url": "classes/App-Controller-CardController.html#method_dealCards"
+        },                {
+            "fqsen": "\\App\\Controller\\CodeQualityController",
+            "name": "CodeQualityController",
+            "summary": "",
+            "url": "classes/App-Controller-CodeQualityController.html"
+        },                {
+            "fqsen": "\\App\\Controller\\CodeQualityController\u003A\u003Aindex\u0028\u0029",
+            "name": "index",
+            "summary": "",
+            "url": "classes/App-Controller-CodeQualityController.html#method_index"
         },                {
             "fqsen": "\\App\\Controller\\DiceGameController",
             "name": "DiceGameController",
