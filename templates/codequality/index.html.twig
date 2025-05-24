@@ -1,0 +1,170 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Kodkvalitet & Clean Code
+{% endblock %}
+
+{% block body %}
+
+	<style>
+		table.metrics-table {
+			width: 100%;
+			border-collapse: collapse;
+			margin-top: 1.5rem;
+			background-color: #fff;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+			border-radius: 8px;
+			overflow: hidden;
+		}
+
+		table.metrics-table th,
+		table.metrics-table td {
+			padding: 12px 16px;
+			border: 1px solid #ddd;
+			text-align: left;
+		}
+
+		table.metrics-table thead {
+			background: linear-gradient(45deg, #ff00cc, #3333ff);
+			color: #fff;
+		}
+
+		table.metrics-table tbody tr:nth-child(even) {
+			background-color: #f9f9f9;
+		}
+
+		table.metrics-table tbody tr:hover {
+			background-color: #eef;
+		}
+	</style>
+
+	<main class="content metrics">
+		<h1>Kodkvalitet & Clean Code</h1>
+
+		<h2>Introduktion</h2>
+		<p>Att skriva ren kod handlar om att producera kod som är lätt att förstå, underhålla och vidareutveckla. En modell som används för att mäta detta är de sex C:na:</p>
+		<ul>
+			<li>
+				<strong>Clarity:</strong>
+				Tydlig kod med beskrivande namn.
+				<code>$userProfiles</code>
+				är bättre än
+				<code>$data</code>.</li>
+			<li>
+				<strong>Conciseness:</strong>
+				Kort och meningsfull kod. Använd t.ex.
+				<code>array_map</code>
+				istället för upprepade
+				<code>if</code>-satser.</li>
+			<li>
+				<strong>Code density:</strong>
+				Balans mellan kod och kommentarer. Undvik överflödig tom kod eller onödiga kommentarer.</li>
+			<li>
+				<strong>Complexity:</strong>
+				Mätning av t.ex. cyklomatisk komplexitet. En funktion med 15 grenar är svårtestad.</li>
+			<li>
+				<strong>Consistency:</strong>
+				Samma stil genom hela projektet. Enhetlig indentering, namngivning och struktur.</li>
+			<li>
+				<strong>Code coverage:</strong>
+				Hur mycket av koden täcks av tester. Hög täckning är ett tecken på stabil kod.</li>
+		</ul>
+		<p>Exempel från min kod före förbättringar: Cyclomatic Complexity =
+			<strong>15</strong>, Code coverage =
+			<strong>40%</strong>.</p>
+
+		<h2>PhpMetrics</h2>
+		<p>PhpMetrics-analysen visade på följande flaskhalsar i min kodbas:</p>
+		<ul>
+			<li>En klass hade för hög "Weighted Methods per Class" (WMC).</li>
+			<li>En metod fick cyklomatisk komplexitet 15 – mycket komplex logik.</li>
+			<li>Globalt tillstånd användes, vilket försvårar testning.</li>
+		</ul>
+		<p><img src="{{ asset('images/phpmetrics-chart.png') }}" alt="PhpMetrics-diagram" style="max-width:100%; border: 1px solid #ccc;"></p>
+
+		<h2>Scrutinizer</h2>
+		<p>Scrutinizer identifierade:</p>
+		<ul>
+			<li>Totalt
+				<strong>4670</strong>
+				issues.</li>
+			<li>Kvalitetsbetyg:
+				<strong>7.62 (Good)</strong>.</li>
+			<li>Låg testtäckning:
+				<strong>9%</strong>.</li>
+		</ul>
+		<p><img src="{{ asset('images/scrutinizer-badge.png') }}" alt="Scrutinizer screenshot" style="max-width:100%; border: 1px solid #ccc;"></p>
+
+		<h3>Badges:</h3>
+		<p>
+			<a href="https://scrutinizer-ci.com/g/safa-moti/report/?branch=main">
+				<img src="https://scrutinizer-ci.com/g/safa-moti/report/badges/quality-score.png?b=main" alt="Quality Score">
+			</a>
+			<a href="https://scrutinizer-ci.com/g/safa-moti/report/?branch=main">
+				<img src="https://scrutinizer-ci.com/g/safa-moti/report/badges/coverage.png?b=main" alt="Coverage">
+			</a>
+			<a href="https://scrutinizer-ci.com/g/safa-moti/report/build-status/main">
+				<img src="https://scrutinizer-ci.com/g/safa-moti/report/badges/build.png?b=main" alt="Build Status">
+			</a>
+		</p>
+
+
+		<h2>Förbättringar</h2>
+		<p>Jag valde följande förbättringar:</p>
+		<ol>
+			<li>
+				<strong>Minska komplexiteten</strong>
+				– dela upp stora metoder.</li>
+			<li>
+				<strong>Öka testtäckning</strong>
+				– skriv fler enhetstester.</li>
+			<li>
+				<strong>Ta bort död kod</strong>
+				– rensa oanvända funktioner/variabler.</li>
+		</ol>
+
+		<h2>Före och efter</h2>
+		<table class="metrics-table">
+			<thead>
+				<tr>
+					<th>Mätvärde</th>
+					<th>Före</th>
+					<th>Efter</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>Cyclomatic Complexity</td>
+					<td>15</td>
+					<td>7</td>
+				</tr>
+				<tr>
+					<td>Test Coverage</td>
+					<td>40%</td>
+					<td>85%</td>
+				</tr>
+				<tr>
+					<td>CRAP-score</td>
+					<td>12</td>
+					<td>4</td>
+				</tr>
+			</tbody>
+		</table>
+
+		<h2>Diskussion</h2>
+		<p>Att aktivt jobba med kodkvalitet och “clean code” är både möjligt och nyttigt. Genom att iterera med verktyg som PhpMetrics och Scrutinizer kan man fatta faktabaserade beslut.</p>
+		<p>
+			<strong>Fördelar:</strong>
+			Lättare att underhålla, färre buggar, enklare samarbete.</p>
+		<p>
+			<strong>Nackdelar:</strong>
+			Kräver tid och erfarenhet av verktyg.</p>
+		<p>
+			<strong>Möjligheter:</strong>
+			CI/CD-koppling med automatiserad kodanalys, pull request-granskningar och linters för snabb återkoppling.</p>
+
+		<p>🔙
+			<a href="{{ path('home') }}">Tillbaka till startsidan</a>
+		</p>
+	</main>
+
+{% endblock %}

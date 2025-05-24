@@ -28,8 +28,6 @@
 
 		<nav style="background: linear-gradient(45deg, #ff00cc, #3333ff); padding: 15px;">
 			<ul style="display: flex; gap: 15px; list-style: none; justify-content: center; font-size: 1.2rem;">
-
-
 				<li>
 					<a href="{{ path('about') }}" style="color: lime;">📘 About</a>
 				</li>
@@ -45,7 +43,6 @@
 				<li>
 					<a href="{{ path('lucky') }}" style="color: pink;">🎲 Lucky</a>
 				</li>
-
 				<li>
 					<a href="{{ path('game_home') }}" style="color: lightcoral;">🎮 Game Home</a>
 				</li>
@@ -64,7 +61,11 @@
 				<li>
 					<a href="{{ path('book_home') }}" style="color: yellow;">📚 Books</a>
 				</li>
+				<li>
+					<a href="{{ path('code_quality') }}" style="color: gold;">📊 Kodkvalitet</a>
+				</li>
 			</ul>
+
 		</nav>
 
 		<main style="padding: 2rem; background: rgba(255, 255, 255, 0.7); margin: 1rem; border-radius: 1rem;"> {% block body %}{% endblock %}
