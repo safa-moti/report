@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="sv">
+	<head>
+		<meta charset="UTF-8"/>
+		<title>
+			{% block title %}Black Jack Project
+			{% endblock %}
+		</title>
+
+		<style>
+			body {
+				font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+				background-color: #1e1e2f;
+				color: #f0f0f5;
+				margin: 0;
+				padding: 0;
+			}
+
+			header,
+			footer {
+				background-color: #0f0f1f;
+				padding: 1rem;
+				text-align: center;
+				color: #f4b41a;
+				font-weight: bold;
+				font-size: 1.2rem;
+			}
+
+			nav {
+				background-color: #292944;
+				padding: 0.5rem 1rem;
+			}
+
+			nav a {
+				color: #f4b41a;
+				text-decoration: none;
+				margin: 0 1rem;
+				font-weight: 600;
+			}
+
+			nav a:hover {
+				text-decoration: underline;
+			}
+
+			main {
+				padding: 1.5rem;
+				max-width: 900px;
+				margin: 0 auto;
+			}
+
+			/* Statistik stapeldiagram */
+			.stats-container {
+				max-width: 400px;
+				margin-top: 2em;
+			}
+
+			.stat-bar {
+				display: flex;
+				align-items: center;
+				margin-bottom: 6px;
+			}
+
+			.card-label {
+				width: 50px;
+				font-weight: bold;
+				color: #f4b41a;
+			}
+
+			.bar {
+				height: 20px;
+				background-color: #f4b41a;
+				margin: 0 10px;
+				border-radius: 4px;
+			}
+
+			.count-label {
+				width: 20px;
+				text-align: right;
+				color: #f0f0f5;
+			}
+
+			.cards {
+				list-style: none;
+				padding: 0;
+				display: flex;
+				gap: 0.5rem;
+				flex-wrap: wrap;
+			}
+
+			.cards li {
+				background-color: #33334d;
+				padding: 0.5rem 0.7rem;
+				border-radius: 4px;
+				font-size: 1.1rem;
+				border: 1px solid #f4b41a;
+			}
+
+			.button-link {
+				display: inline-block;
+				background-color: #f4b41a;
+				color: #1e1e2f;
+				padding: 0.5rem 1rem;
+				margin: 0.2rem 0.5rem;
+				text-decoration: none;
+				border-radius: 4px;
+				font-weight: bold;
+				transition: background-color 0.3s ease;
+			}
+
+			.button-link:hover {
+				background-color: #c99c0c;
+			}
+
+			.status {
+				font-weight: bold;
+				padding: 0.2rem 0.5rem;
+				border-radius: 4px;
+				font-size: 0.9rem;
+			}
+
+			.status.playing {
+				background-color: #007bff;
+				color: white;
+			}
+
+			.status.stand {
+				background-color: #ffc107;
+				color: #1e1e2f;
+			}
+
+			.status.bust {
+				background-color: #dc3545;
+				color: white;
+			}
+
+			.status.blackjack {
+				background-color: #28a745;
+				color: white;
+			}
+
+			.result.win {
+				color: #6eff7e;
+				font-weight: bold;
+			}
+
+			.result.lose {
+				color: #ff4d4d;
+				font-weight: bold;
+			}
+
+			.result.draw {
+				color: #00c2ff;
+				font-weight: bold;
+			}
+
+			.notice {
+				color: #ffc107;
+				font-weight: bold;
+				margin-top: 1rem;
+			}
+
+			form label {
+				font-weight: 600;
+				margin-right: 0.5rem;
+			}
+
+			form input[type="number"] {
+				width: 50px;
+				padding: 0.3rem;
+				border-radius: 4px;
+				border: none;
+				font-size: 1rem;
+				margin-right: 0.5rem;
+			}
+
+			form button {
+				background-color: #f4b41a;
+				border: none;
+				padding: 0.5rem 1rem;
+				border-radius: 4px;
+				font-weight: bold;
+				cursor: pointer;
+				color: #1e1e2f;
+				transition: background-color 0.3s ease;
+			}
+
+			form button:hover {
+				background-color: #c99c0c;
+			}
+		</style>
+
+		{% block stylesheets %}{% endblock %}
+	</head>
+	<body>
+		<header>
+			Black Jack Project
+		</header>
+
+		<nav>
+			<a href="{{ path('proj_home') }}">Home</a>
+			<a href="{{ path('proj_about') }}">About</a>
+			<a href="{{ path('proj_play', {'hands': hand_count|default(1)}) }}">Play</a>
+			<a href="{{ path('proj_api') }}">API</a>
+		</nav>
+
+		<main>
+			{% for label, messages in app.flashes %}
+				{% for message in messages %}
+					<div class="notice">{{ message }}</div>
+				{% endfor %}
+			{% endfor %}
+
+			{% block body %}{% endblock %}
+		</main>
+
+		<footer>
+			&copy; 2025 Black Jack Project
+		</footer>
+	</body>
+</html>

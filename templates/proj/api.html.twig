@@ -1,0 +1,58 @@
+{% extends 'proj/base_proj.html.twig' %}
+
+{% block title %}API Tester - Black Jack
+{% endblock %}
+
+{% block body %}
+	<h1>Black Jack API Test</h1>
+
+	<p>Använd knapparna nedan för att testa API-endpoints. Resultatet visas i rutan nedanför.</p>
+
+	<div>
+		<button onclick="apiStart()">Starta nytt spel</button>
+		<button onclick="apiHit()">Dra kort (hit) hand 0</button>
+		<button onclick="apiStand()">Stanna (stand) hand 0</button>
+		<button onclick="apiDealerTurn()">Dealerns tur</button>
+		<button onclick="apiResults()">Visa resultat</button>
+	</div>
+
+	<pre id="api-response" style="background:#222; color:#f4b41a; padding:1em; margin-top:1em; max-height: 400px; overflow-y:auto;"></pre>
+
+	<script>
+		const apiResponse = document.getElementById('api-response');
+
+function showResponse(data) {
+apiResponse.textContent = JSON.stringify(data, null, 2);
+}
+
+async function apiStart() {
+const resp = await fetch('/api/start/1');
+const data = await resp.json();
+showResponse(data);
+}
+
+async function apiHit() {
+const resp = await fetch('/api/hit/0', {method: 'POST'});
+const data = await resp.json();
+showResponse(data);
+}
+
+async function apiStand() {
+const resp = await fetch('/api/stand/0', {method: 'POST'});
+const data = await resp.json();
+showResponse(data);
+}
+
+async function apiDealerTurn() {
+const resp = await fetch('/api/dealer-turn', {method: 'POST'});
+const data = await resp.json();
+showResponse(data);
+}
+
+async function apiResults() {
+const resp = await fetch('/api/results');
+const data = await resp.json();
+showResponse(data);
+}
+	</script>
+{% endblock %}

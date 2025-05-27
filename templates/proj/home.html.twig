@@ -1,0 +1,15 @@
+{% extends 'proj/base_proj.html.twig' %}
+
+{% block title %}Black Jack - Home
+{% endblock %}
+
+{% block body %}
+	<h1>Välkommen till Black Jack Project!</h1>
+	<p>Här kan du spela Black Jack med 1 till 3 händer samtidigt mot banken.</p>
+
+	<p>
+		<a href="{{ path('proj_play') }}">Starta spelet</a>
+		eller
+		<a href="{{ path('proj_about') }}">Läs mer om projektet</a>
+	</p>
+{% endblock %}

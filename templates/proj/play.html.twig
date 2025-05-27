@@ -1,0 +1,56 @@
+{% extends 'proj/base_proj.html.twig' %}
+
+{% block title %}Spela Black Jack
+{% endblock %}
+
+{% block body %}
+	<h1>Black Jack</h1>
+
+	<p>
+		<strong>Kort kvar i leken:</strong>
+		{{ deckCount }}</p>
+
+	<h2>Dina händer</h2>
+	{% for i in 0..(playerHands|length - 1) %}
+		<div class="player-hand">
+			<h3>
+				Hand
+				{{ i + 1 }}
+				-
+				{% set status = handStatus[i] %}
+				<span class="status {{ status }}">{{ status|capitalize }}</span>
+			</h3>
+
+			<ul class="cards">
+				{% for card in playerHands[i] %}
+					<li>{{ card }}</li>
+				{% endfor %}
+			</ul>
+
+			<p>Poäng:
+				<strong>{{ playerScores[i] }}</strong>
+			</p>
+
+			{% if handStatus[i] == 'playing' %}
+				<a href="{{ path('proj_hit', {'handIndex': i}) }}" class="button-link">🃏 Dra kort</a>
+				<a href="{{ path('proj_stand', {'handIndex': i}) }}" class="button-link">✋ Stanna</a>
+			{% endif %}
+		</div>
+	{% endfor %}
+
+	<h2>Dealerns hand</h2>
+	<ul class="cards">
+		{% for card in dealerHand %}
+			<li>{{ card }}</li>
+		{% endfor %}
+	</ul>
+	<p>Poäng:
+		<strong>{{ dealerScore }}</strong>
+	</p>
+
+	{% if handStatus|filter(status => status == 'playing')|length == 0 %}
+		<a href="{{ path('proj_dealer_turn') }}" class="button-link">🎲 Dealerns tur</a>
+	{% else %}
+		<p class="notice">⏳ Avsluta alla händer innan dealerns tur.</p>
+	{% endif %}
+{% endblock %}

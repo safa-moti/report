@@ -1,0 +1,36 @@
+body {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #0b3d91;
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+}
+
+.project-header {
+    background-color: #091f5b;
+    padding: 1em;
+    text-align: center;
+}
+
+.project-navbar {
+    list-style: none;
+    padding: 0;
+}
+
+.project-navbar li {
+    display: inline;
+    margin: 0 15px;
+}
+
+.project-navbar a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.project-footer {
+    background-color: #091f5b;
+    padding: 1em;
+    text-align: center;
+    margin-top: 40px;
+}

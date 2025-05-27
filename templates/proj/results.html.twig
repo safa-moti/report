@@ -1,0 +1,74 @@
+{% extends 'proj/base_proj.html.twig' %}
+
+{% block title %}Resultat - Black Jack
+{% endblock %}
+
+{% block body %}
+	<h1>Resultat</h1>
+
+	<h2>Dina händer</h2>
+	{% for i in 0..(playerHands|length - 1) %}
+		<div>
+			<h3>Hand
+				{{ i + 1 }}</h3>
+			<ul class="cards">
+				{% for card in playerHands[i] %}
+					<li>{{ card }}</li>
+				{% endfor %}
+			</ul>
+			<p>Poäng:
+				{{ playerScores[i] }}</p>
+
+			{# Resultatklass för färgkodning #}
+			{% set resultClass = 
+                results[i] starts with 'Vann' ? 'win' :
+                (results[i] starts with 'Förlorade' ? 'lose' : 'draw') 
+            %}
+			<p class="result {{ resultClass }}">
+				<strong>{{ results[i] }}</strong>
+			</p>
+		</div>
+	{% endfor %}
+
+	<h2>Dealerns hand</h2>
+	<ul class="cards">
+		{% for card in dealerHand %}
+			<li>{{ card }}</li>
+		{% endfor %}
+	</ul>
+	<p>Poäng:
+		{{ dealerScore }}</p>
+
+	{% if dealerScore > 21 %}
+		<p class="result lose">
+			<strong>Dealern gick bust!</strong>
+		</p>
+	{% elseif dealerScore == 21 %}
+		<p class="result win">
+			<strong>Dealern har Blackjack!</strong>
+		</p>
+	{% endif %}
+
+	<h2>Statistik över dragna kort</h2>
+	<div class="stats-container">
+		{% for card, count in cardsDrawn %}
+			<div class="stat-bar">
+				<span class="card-label">{{ card }}</span>
+				<div class="bar" style="width: {{ count * 10 }}px;"></div>
+				<span class="count-label">{{ count }}</span>
+			</div>
+		{% endfor %}
+	</div>
+
+	<p>
+		<a href="{{ path('proj_start', {'hands': playerHands|length}) }}" class="button-link">
+			🔄 Spela igen med
+			{{ playerHands|length }}
+			hand{{ playerHands|length > 1 ? 'er' : '' }}
+		</a>
+	</p>
+
+	<p>
+		<a href="{{ path('proj_home') }}" class="button-link">🏠 Tillbaka till startsidan</a>
+	</p>
+{% endblock %}
