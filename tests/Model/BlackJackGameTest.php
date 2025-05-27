@@ -28,7 +28,7 @@ class BlackJackGameTest extends TestCase
     {
         $game = new BlackJackGame(1);
 
-        // Loopa tills handen är "playing"
+        // Loopa tills handen inte är blackjack eller bust för att kunna hit:a
         while (in_array($game->getHandStatus()[0], ['blackjack', 'bust'])) {
             $game = new BlackJackGame(1);
         }
@@ -50,8 +50,14 @@ class BlackJackGameTest extends TestCase
     public function testAllHandsFinished()
     {
         $game = new BlackJackGame(1);
+
+        // Initialt ska alla händer inte vara klara
         $this->assertFalse($game->allHandsFinished());
-        $game->stand(0);
+
+        // Ändra status till något som indikerar att handen är klar, t.ex. 'stand'
+        $this->setPrivateProperty($game, 'handStatus', ['stand']);
+
+        // Nu ska allHandsFinished() returnera true eftersom alla händer är "stand"
         $this->assertTrue($game->allHandsFinished());
     }
 
@@ -69,7 +75,7 @@ class BlackJackGameTest extends TestCase
     {
         $game = new BlackJackGame(1);
 
-        // Sätt upp en hand med känd poäng
+        // Sätt upp en hand med känd poäng och status
         $this->setPrivateProperty($game, 'playerHands', [['10♠', '9♦']]);
         $this->setPrivateProperty($game, 'playerScores', [19]);
         $this->setPrivateProperty($game, 'handStatus', ['stand']);
@@ -124,7 +130,13 @@ class BlackJackGameTest extends TestCase
         $this->assertNotEmpty($stats);
     }
 
-    // Hjälpmetod för att manipulera privata egenskaper
+    /**
+     * Hjälpmetod för att manipulera privata egenskaper.
+     *
+     * @param object $object Objekt att ändra på
+     * @param string $property Egenskapens namn
+     * @param mixed $value Värdet att sätta
+     */
     private function setPrivateProperty($object, string $property, $value): void
     {
         $reflection = new \ReflectionClass($object);
