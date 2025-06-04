@@ -199,7 +199,8 @@
 		<nav>
 			<a href="{{ path('proj_home') }}">Home</a>
 			<a href="{{ path('proj_about') }}">About</a>
-			<a href="{{ path('proj_play', {'hands': hand_count|default(1)}) }}">Play</a>
+			<a href="{{ path('proj_start', {'hands': 3}) }}">Play</a>
+
 			<a href="{{ path('proj_api') }}">API</a>
 		</nav>
 
