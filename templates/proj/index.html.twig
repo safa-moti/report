@@ -1,10 +1,20 @@
 {% extends 'proj/base_proj.html.twig' %}
 
-{% block title %}Välkommen till Black Jack Projektet
+{% block title %}Black Jack - Home
 {% endblock %}
 
 {% block body %}
-	<h1>Välkommen till Black Jack Projektet</h1>
-	<p>Här kan du spela Black Jack mot banken, med upp till 3 händer samtidigt.</p>
-	<p>Använd menyn ovan för att starta spelet eller läsa mer om reglerna.</p>
+	<h1>Välkommen till Black Jack Project!</h1>
+	<p>Här kan du spela Black Jack med 1 till 3 händer samtidigt mot banken.</p>
+
+	<form action="{{ path('proj_start') }}" method="get">
+		<label for="hands">Antal händer:</label>
+		<input type="number" id="hands" name="hands" min="1" max="3" value="1" required>
+		<button type="submit">Starta spelet</button>
+	</form>
+
+	<p style="margin-top:1em;">
+		Eller
+		<a href="{{ path('proj_about') }}">läs mer om projektet</a>.
+	</p>
 {% endblock %}
