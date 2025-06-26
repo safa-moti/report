@@ -30,7 +30,8 @@ symfony server:start
 
 [![Build Status](https://scrutinizer-ci.com/g/safa-moti/report/badges/build.png?b=main)](https://scrutinizer-ci.com/g/safa-moti/report/build-status/main)
 
-https://scrutinizer-ci.com/g/safa-moti/report/badges/quality-score.png?b=main
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/safa-moti/report/badges/quality-score.png?b=main)](https://scrutinizer-ci.com/g/safa-moti/report/?branch=main)
+
 
 # Black Jack Project
 

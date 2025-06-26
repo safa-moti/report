@@ -1,30 +1,37 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Play Game
+{% block title %}
+	Play Game
 {% endblock %}
 
 {% block body %}
 	<h1>Game Play</h1>
 
 	<h2>Your Hand</h2>
-	<ul>
+	<ul style="list-style: none; padding: 0; display: flex; gap: 10px;">
 		{% for card in player_hand %}
-			<li>{{ card }}</li>
+			<li>
+				<img src="{{ asset('img/cards/' ~ card ~ '.png') }}" alt="{{ card }}" width="100">
+			</li>
 		{% endfor %}
 	</ul>
 	<p>
 		<strong>Your Score:</strong>
-		{{ player_score }}</p>
+		{{ player_score }}
+	</p>
 
 	<h2>Dealer's Hand</h2>
-	<ul>
+	<ul style="list-style: none; padding: 0; display: flex; gap: 10px;">
 		{% for card in dealer_hand %}
-			<li>{{ card }}</li>
+			<li>
+				<img src="{{ asset('img/cards/' ~ card ~ '.png') }}" alt="{{ card }}" width="100">
+			</li>
 		{% endfor %}
 	</ul>
 	<p>
 		<strong>Dealer's Score:</strong>
-		{{ dealer_score }}</p>
+		{{ dealer_score }}
+	</p>
 
 	<p>
 		<a href="{{ path('game_draw') }}">Draw a card</a>
