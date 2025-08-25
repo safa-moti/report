@@ -12,32 +12,34 @@ Projektet är byggt med Symfony och innehåller flera routes, redovisningstexter
 
 **Länk till GitHub:** [Projekt GitHub](https://github.com/safa-moti/report)
 
-Kom Igång
+---
+
+## Kom igång
 
 Följ instruktionerna för att klona projektet och köra det lokalt:
 
-```bash
-git clone git@github.com:safa-moti/report.git
-cd report
-composer install
-symfony server:start
+    git clone git@github.com:safa-moti/report.git
+    cd report
+    composer install
+    symfony server:start
 
+---
 
-<h3>Badges:</h3>
-
-
-[![Code Coverage](https://scrutinizer-ci.com/g/safa-moti/report/badges/coverage.png?b=main)](https://scrutinizer-ci.com/g/safa-moti/report/?branch=main)
+## Badges
 
 [![Build Status](https://scrutinizer-ci.com/g/safa-moti/report/badges/build.png?b=main)](https://scrutinizer-ci.com/g/safa-moti/report/build-status/main)
-
+[![Code Coverage](https://scrutinizer-ci.com/g/safa-moti/report/badges/coverage.png?b=main)](https://scrutinizer-ci.com/g/safa-moti/report/?branch=main)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/safa-moti/report/badges/quality-score.png?b=main)](https://scrutinizer-ci.com/g/safa-moti/report/?branch=main)
 
+---
 
-# Black Jack Project
+$$
+**# Black Jack Project**
+$$
 
-[![Quality Score](https://scrutinizer-ci.com/g/safa-moti/report/badges/quality-score.png?b=main)](https://scrutinizer-ci.com/g/safa-moti/report/?branch=main)
-[![Coverage Status](https://scrutinizer-ci.com/g/safa-moti/report/badges/coverage.png?b=main)](https://scrutinizer-ci.com/g/safa-moti/report/?branch=main)
-[![Build Status](https://scrutinizer-ci.com/g/safa-moti/report/build-status/main)](https://scrutinizer-ci.com/g/safa-moti/report/build-status/main)
+[![Build Status](https://scrutinizer-ci.com/g/safa-moti/report/badges/build.png?b=main)](https://scrutinizer-ci.com/g/safa-moti/report/build-status/main)
+[![Code Coverage](https://scrutinizer-ci.com/g/safa-moti/report/badges/coverage.png?b=main)](https://scrutinizer-ci.com/g/safa-moti/report/?branch=main)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/safa-moti/report/badges/quality-score.png?b=main)](https://scrutinizer-ci.com/g/safa-moti/report/?branch=main)
 
 ---
 
@@ -58,15 +60,9 @@ Projektet är ett exempel på hur man kan strukturera ett spel med tydlig separe
 
 ---
 
+## Klona repot & kom igång
 
- Klona repot
-
-Kom Igång
-
-Följ instruktionerna för att klona projektet och köra det lokalt:
-
-```bash
-git clone git@github.com:safa-moti/report.git
-cd report
-composer install
-symfony server:start 
+    git clone git@github.com:safa-moti/report.git
+    cd report
+    composer install
+    symfony server:start
