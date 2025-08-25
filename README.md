@@ -33,9 +33,7 @@ Följ instruktionerna för att klona projektet och köra det lokalt:
 
 ---
 
-$$
-**# Black Jack Project**
-$$
+## Black Jack Project
 
 [![Build Status](https://scrutinizer-ci.com/g/safa-moti/report/badges/build.png?b=main)](https://scrutinizer-ci.com/g/safa-moti/report/build-status/main)
 [![Code Coverage](https://scrutinizer-ci.com/g/safa-moti/report/badges/coverage.png?b=main)](https://scrutinizer-ci.com/g/safa-moti/report/?branch=main)
