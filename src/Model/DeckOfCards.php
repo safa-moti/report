@@ -3,21 +3,25 @@
 namespace App\Model;
 
 /**
- * DeckOfCards representerar en kortlek bestående av 52 kort.
- * Den innehåller metoder för att dra kort och hämta information om korten i leken.
+ * Representerar en kortlek med 52 spelkort.
  */
 class DeckOfCards
 {
     /** @var Card[] */
     private array $cards = [];
 
-    /**
-     * Konstruktor som skapar en ny kortlek och blandar den.
-     * Skapar en kortlek med 52 kort (alla kombinationer av 4 färger och 13 ranker).
-     * Blandar korten direkt efter skapandet.
-     */
     public function __construct()
     {
+        $this->reset();
+    }
+
+    /**
+     * Skapar en ny blandad kortlek med 52 kort.
+     */
+    public function reset(): void
+    {
+        $this->cards = [];
+
         $suits = ['♠', '♥', '♦', '♣'];
         $ranks = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A'];
 
@@ -26,15 +30,12 @@ class DeckOfCards
                 $this->cards[] = new Card($rank, $suit);
             }
         }
+
         shuffle($this->cards);
     }
 
     /**
      * Drar ett kort från kortleken.
-     *
-     * Tar bort och returnerar ett kort från kortleken. Om kortleken är tom, returneras null.
-     *
-     * @return Card|null Det dragna kortet eller null om kortleken är tom.
      */
     public function drawCard(): ?Card
     {
@@ -42,9 +43,7 @@ class DeckOfCards
     }
 
     /**
-     * Hämtar antalet kvarvarande kort i kortleken.
-     *
-     * @return int Antalet kort som finns kvar i kortleken.
+     * Hämtar antalet kort som finns kvar i kortleken.
      */
     public function getRemainingCards(): int
     {
@@ -52,9 +51,7 @@ class DeckOfCards
     }
 
     /**
-     * Hämtar alla kort som finns i kortleken.
-     *
-     * @return Card[] En array med alla kort som finns i kortleken.
+     * Hämtar hela kortleken.
      */
     public function getCards(): array
     {

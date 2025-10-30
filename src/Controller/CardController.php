@@ -2,7 +2,7 @@
 
 namespace App\Controller;
 
-use App\Card\DeckOfCards;
+use App\Model\DeckOfCards;
 use App\Card\CardHand;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -21,16 +21,16 @@ class CardController extends AbstractController
     #[Route('/card/deck', name: 'card_deck')]
     public function viewDeck(SessionInterface $session): Response
     {
-        // Hämta kortleken från sessionen
+
         $deck = $session->get('deck');
 
-        // Om ingen kortlek finns i sessionen (eller om den är tom), skapa en ny kortlek
+
         if (!$deck || $deck->getRemainingCards() === 0) {
             $deck = new DeckOfCards();
             $session->set('deck', $deck);
         }
 
-        // Hämta alla kort från kortleken
+
         $cards = $deck->getDeck();
 
         return $this->render('card/deck.html.twig', [
@@ -91,7 +91,7 @@ class CardController extends AbstractController
         $session->remove('deck');
         $this->addFlash('notice', 'Deck deleted successfully!');
 
-        // Skapa en ny kortlek om den har raderats
+
         $deck = new DeckOfCards();
         $session->set('deck', $deck);
 
@@ -104,7 +104,7 @@ class CardController extends AbstractController
         $deck = $session->get('deck');
         $dealtCards = [];
 
-        // Här delar vi korten till spelare
+
         for ($i = 0; $i < $players; $i++) {
             $playerHand = [];
             for ($j = 0; $j < $cards; $j++) {
@@ -113,7 +113,7 @@ class CardController extends AbstractController
             $dealtCards[] = $playerHand;
         }
 
-        // Spara tillbaka kortleken om den inte är tom
+
         $session->set('deck', $deck);
 
         return $this->render('card/deal.html.twig', [

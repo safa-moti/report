@@ -1,43 +1,51 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}
-	Play Game
+{% block title %}Spela 21
 {% endblock %}
 
 {% block body %}
-	<h1>Game Play</h1>
+	<h1>Spelet 21</h1>
 
-	<h2>Your Hand</h2>
+	{% if result %}
+		<div style="background-color: #f0f0f0; padding: 1rem; border-radius: 8px; margin-bottom: 1rem;">
+			<h2>{{ result }}</h2>
+		</div>
+	{% endif %}
+
+	<h2>Din hand</h2>
 	<ul style="list-style: none; padding: 0; display: flex; gap: 10px;">
 		{% for card in player_hand %}
-			<li>
-				<img src="{{ asset('img/cards/' ~ card ~ '.png') }}" alt="{{ card }}" width="100">
-			</li>
+			<li><img src="{{ asset('img/cards/' ~ card ~ '.png') }}" alt="{{ card }}" width="100"></li>
 		{% endfor %}
 	</ul>
 	<p>
-		<strong>Your Score:</strong>
-		{{ player_score }}
-	</p>
+		<strong>Din poäng:</strong>
+		{{ player_score }}</p>
 
-	<h2>Dealer's Hand</h2>
+	<hr>
+
+	<h2>Bankens hand</h2>
 	<ul style="list-style: none; padding: 0; display: flex; gap: 10px;">
 		{% for card in dealer_hand %}
-			<li>
-				<img src="{{ asset('img/cards/' ~ card ~ '.png') }}" alt="{{ card }}" width="100">
-			</li>
+			<li><img src="{{ asset('img/cards/' ~ card ~ '.png') }}" alt="{{ card }}" width="100"></li>
 		{% endfor %}
 	</ul>
 	<p>
-		<strong>Dealer's Score:</strong>
-		{{ dealer_score }}
-	</p>
+		<strong>Bankens poäng:</strong>
+		{{ dealer_score }}</p>
 
-	<p>
-		<a href="{{ path('game_draw') }}">Draw a card</a>
-	</p>
+	<hr>
 
-	<p>
-		<a href="{{ path('game_dealer_turn') }}">Dealer's Turn</a>
-	</p>
+	{% if not game_over %}
+		<div style="margin-top: 1rem;">
+			<a class="btn btn-success" href="{{ path('game_draw') }}">🃏 Dra kort</a>
+			<a class="btn btn-warning" href="{{ path('game_stand') }}">✋ Stanna (dealerns tur)</a>
+		</div>
+	{% else %}
+		<div style="margin-top: 1rem;">
+			<p style="font-size: 1.2rem; font-weight: bold; color: darkred;">Spelet är slut!</p>
+			<a class="btn btn-primary" href="{{ path('game_new') }}">🔄 Starta ny omgång</a>
+			<a class="btn btn-secondary" href="{{ path('game_home') }}">⬅️ Till startsidan</a>
+		</div>
+	{% endif %}
 {% endblock %}

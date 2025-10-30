@@ -1,16 +1,30 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}API-översikt{% endblock %}
+{% block title %}API-översikt
+{% endblock %}
 
 {% block body %}
-    <h1>API-översikt</h1>
-    
-    <p>Här är alla tillgängliga API-rutter:</p>
-    
-    <ul>
-        <li><a href="{{ path('api_deck') }}">GET /api/deck - Visa kortleken i JSON-format</a></li>
-        <li><a href="{{ path('api_deck_shuffle') }}">POST /api/deck/shuffle - Blanda kortleken i JSON-format</a></li>
-        <li><a href="{{ path('api_deck_draw') }}">POST /api/deck/draw - Dra ett kort från kortleken i JSON-format</a></li>
-        <li><a href="{{ path('api_deck_draw_number', {number: 5}) }}">POST /api/deck/draw/{number} - Dra flera kort från kortleken</a></li>
-    </ul>
+	<h1>API-översikt</h1>
+
+	<p>Här är alla tillgängliga API-rutter:</p>
+
+	<ul>
+		<li>
+			<a href="{{ path('api_deck') }}">GET /api/deck</a>
+			– Visa hela kortleken i JSON-format</li>
+		<li>
+			<a href="{{ path('api_deck_shuffle') }}">GET /api/deck/shuffle</a>
+			– Blanda kortleken</li>
+		<li>
+			<a href="{{ path('api_deck_draw') }}">GET /api/deck/draw</a>
+			– Dra ett kort</li>
+		<li>
+			<a href="{{ path('api_deck_draw_number', {number: 3}) }}">GET /api/deck/draw/{number}</a>
+			– Dra flera kort</li>
+		<li>
+			<a href="{{ path('api_game') }}">GET /api/game</a>
+			– Visa aktuell ställning för spelet 21</li>
+	</ul>
+
+	<p>Alla dessa endpoints returnerar JSON-data som kan användas av andra system eller för testning via t.ex. Postman.</p>
 {% endblock %}

@@ -1,12 +1,26 @@
-{# templates/game/index.html.twig #}
 {% extends 'base.html.twig' %}
 
-{% block title %}Game Home{% endblock %}
+{% block title %}Game Home
+{% endblock %}
 
 {% block body %}
-    <h1>Welcome to the Game!</h1>
-    <p>Click below to start playing or view documentation.</p>
-    <a href="{{ path('game_play') }}">Start Game</a>
-    <br>
-    <a href="{{ path('game_doc') }}">View Game Documentation</a>
+	<h1>Välkommen till spelet 21!</h1>
+
+	<p>Målet i spelet är att komma så nära 21 som möjligt utan att gå över. 
+		Ess räknas som 1 eller 14, klädda kort (J, Q, K) är värda 10.</p>
+
+	<ul>
+		<li>Du och banken får två kort vardera.</li>
+		<li>Du kan välja att dra fler kort tills du stannar eller går över 21.</li>
+		<li>Om du går över 21 vinner banken.</li>
+		<li>När du stannar tar banken sin tur. Banken drar kort tills den har 17 eller mer.</li>
+		<li>Banken vinner vid lika poäng.</li>
+	</ul>
+
+	<hr>
+
+	<p>
+		<a class="btn btn-primary" href="{{ path('game_new') }}">🎮 Starta ny omgång</a>
+		<a class="btn btn-secondary" href="{{ path('game_doc') }}">📖 Visa spelregler och dokumentation</a>
+	</p>
 {% endblock %}
